@@ -38,8 +38,9 @@ jobs:
 
       - name: Build Application
         run: |
-          # npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
-          # npm publish --access public
-
           npm i
           npm run build
+
+      - name: Public version
+        run: |
+          npm publish --access public
