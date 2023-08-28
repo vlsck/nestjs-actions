@@ -38,7 +38,7 @@ jobs:
 
       - name: Build Application
         run: |
-          npm i -g @nestjs/cli
-          sh -al
-          # npm i -g
-          # npm run build
+          npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+          # npm publish
+          npm i
+          npm run build
