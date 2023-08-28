@@ -44,4 +44,6 @@ jobs:
       - name: Publish version
         run: |
           npm version prerelease
+          git add .
+          git commit update version
           npm publish
