@@ -29,7 +29,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 18
-          registry-url: https://registry.npmjs.org/
 
       - name: Check node versions
         run: |
@@ -38,12 +37,11 @@ jobs:
 
       - name: Build Application
         run: |
+          npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
           npm i
           npm run build
 
       - name: Publish version
         run: |
-          npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
           npm version prerelease
-          git add . && git commit
           npm publish
