@@ -36,7 +36,7 @@ jobs:
           node -v
           npm -v
 
-      # - name: Build Application
-      #   run: |
-      #     npm install
-      #     npm run build
+      - name: Build Application
+        run: |
+          npm install -g npm
+          npm run build
