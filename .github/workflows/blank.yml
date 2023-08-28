@@ -43,6 +43,6 @@ jobs:
 
       - name: Publish version
         run: |
+          npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
           npm version prerelease
           npm publish
-          npm i @test/actions
