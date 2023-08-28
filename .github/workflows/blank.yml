@@ -26,13 +26,10 @@ jobs:
         uses: actions/checkout@v3
       
       - name: Run install nodejs
-        uses: actions/setup-node@v3
-
-      - name: Use NPM Token with organization read access
-        uses: dkershner6/use-npm-token-action@v1
+        uses: actions/setup-node@v2
         with:
-          token: "${{ secrets.npm_token }}"
-          workspace: ./node
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
 
       - name: Build Application
         run: |
