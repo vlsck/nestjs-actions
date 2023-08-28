@@ -39,5 +39,6 @@ jobs:
       - name: Build Application
         run: |
           npm i -g @nestjs/cli
-          npm i -g
-          npm run build
+          sh -al
+          # npm i -g
+          # npm run build
