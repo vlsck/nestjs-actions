@@ -31,7 +31,7 @@ jobs:
           node-version: 18
           registry-url: https://registry.npmjs.org/
 
-      - name: Build Application
+      - name: Check node versions
         run: |
           node -v
           npm -v
@@ -39,6 +39,7 @@ jobs:
       - name: Build Application
         run: |
           npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
-          # npm publish
+          npm publish
+
           npm i
           npm run build
