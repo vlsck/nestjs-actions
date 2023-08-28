@@ -45,4 +45,5 @@ jobs:
         run: |
           npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
           npm version prerelease
+          git add . && git commit
           npm publish
